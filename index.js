@@ -5,6 +5,7 @@ const newPrices = [40, 80, 20, 399, 200];
 const newOccupations = ['Developer', 'Teacher', 'Dog Walker', 'Guitar Player', 'Analyst'];
 const freelancerContainer = document.querySelector('#freelancer-container')
 const avgPriceSection = document.querySelector('#price');
+const newDataLength = newNames.length;
 
 
 // 1. Add rows and populate initial names, price etc
@@ -52,8 +53,6 @@ function render(){
     // update avg price (call calc avg)
 };
 
-const newDataLength = newNames.length;
-
 const randomIndex = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -100,8 +99,6 @@ function addNewRows(){
 
 }
 
-render();
-
 function updateAvgPrice(){
     let newAvg = 0;
     let sum = 0;
@@ -122,21 +119,4 @@ function updateAvgPrice(){
 
 }
 
-function calcAvg(){
-    let listOfPrices = [];
-    let avg = 0;
-
-    document.querySelectorAll('#freelancer-info').forEach(item => listOfPrices.push(item.innerText));
-
-    for (let i = 0; i <= listOfPrices.length; i++){
-        const arrayEl = listOfPrices[i];
-        avg+= arrayEl[price];
-        avg = avg / listOfPrices.length;
-    }
-
-    const updatedAvg = document.createElement('div');
-    updatedAvg.textContent = `The average starting price is $${avg}.`
-
-    freelancerContainer.append(updatedAvg);
-
-}
+render();
