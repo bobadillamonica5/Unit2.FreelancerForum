@@ -10,12 +10,16 @@
     <h1>Freelancer Forum</h1>
 
     <div>
-        <h3>The average starting price is $30.</h3>
+        <h3 id="avg-price">The average starting price is <span id="price"></span></h3>
     </div>
 
     <div>
         <h2>Available Freelancers</h2>
-        <div id="freelancer-container"></div>
+        <table id="freelancer-container">
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Starting Price</th>
+        </table>
     </div>
     <script src="index.js"></script>
 </body>
